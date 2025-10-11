@@ -23,10 +23,10 @@ theta_opt       = 0;                                % [rad]
 
 % determine optimal power coefficient 
 c_P             = Parameter.Turbine.SS.c_P;
-[cp_max, linearIndex] = max(c_P(:))
-[row, col] = ind2sub(size(c_P), linearIndex)
-lambda_max = lambda(row)
-theta_max = theta(col)
+[cp_max, linearIndex] = max(c_P(:));
+[row, col] = ind2sub(size(c_P), linearIndex);
+lambda_max = lambda(row);
+theta_max = theta(col);
 c_P_opt         = interp2(theta,lambda,c_P,theta_opt,lambda_opt);
 deltaP_perc = (cp_max-c_P_opt)/c_P_opt*100
 Pmax = cp_max*.5*rho*pi*R^2*8^3

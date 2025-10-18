@@ -8,8 +8,8 @@ addpath(genpath('..\Library\'))
 %% PreProcessing SLOW
 
 % default parameter turbine and controller
-Parameter                       = NREL5MWDefaultParameter_SLOW1DOF;                                     % parameter file with the turbine parameters
-Parameter                       = NREL5MWDefaultParameter_FBNREL_TorqueController(Parameter);           % parameter file with the controller parameters
+Parameter                       = NREL5MWDefaultParameter_SLOW1DOF;
+Parameter                       = NREL5MWDefaultParameter_FBNREL_TorqueController(Parameter);
 
 % time
 dt                              = 1/80;
@@ -43,7 +43,7 @@ FASTResults = textscan(fid,formatSpec,'HeaderLines',8);
 Time        = FASTResults{:,1};
 Wind1VelX   = FASTResults{:,2};
 RotSpeed    = FASTResults{:,4};
-lambda      = RotSpeed*2*pi/60*Parameter.Turbine.R./Wind1VelX;
+lambda      = RotSpeed*Parameter.Turbine.R./Wind1VelX;
 GenTq       = FASTResults{:,10};
 fclose(fid);
 
@@ -64,7 +64,6 @@ hold on;box on;grid on;
 plot(tout,logsout.get('u').Values.M_g_c.Data/1e3)
 plot(Time,GenTq)
 ylabel('M_G [kNm]')
-legend('SLOW','FAST')
 
 % plot rotor speed
 subplot(413)
@@ -77,6 +76,6 @@ ylabel('\Omega [rpm]')
 subplot(414)
 hold on;box on;grid on;
 plot(tout,logsout.get('y').Values.lambda.Data)
-plot(Time,lambda)
+
 ylabel('\lambda [-]')
 xlabel('time [s]')

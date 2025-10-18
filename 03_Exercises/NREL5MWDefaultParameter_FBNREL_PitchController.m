@@ -12,9 +12,9 @@
 function [Parameter] = NREL5MWDefaultParameter_FBNREL_PitchController(Parameter)
 
 %% FBSWE Pitch Controller
-Parameter.CPC.GS.theta                  = [NaN NaN NaN NaN ];
-Parameter.CPC.GS.kp                     = [NaN NaN NaN NaN ];
-Parameter.CPC.GS.Ti                     = [NaN NaN NaN NaN ];
+Parameter.CPC.GS.theta                  = [0.066817 0.210442 0.304976 0.389997 ];
+Parameter.CPC.GS.kp                     = [0.021958 0.006669 0.003332 0.002561 ];
+Parameter.CPC.GS.Ti                     = [2.897190 2.432029 1.808628 1.467248 ];
 
 Omega_g_rated                           = rpm2radPs(12.1*97);               % [rad/s]
 Parameter.CPC.Omega_g_rated             = Omega_g_rated;

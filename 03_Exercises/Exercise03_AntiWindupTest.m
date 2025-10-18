@@ -35,7 +35,7 @@ Omega(:,1) = logsout.get('y').Values.Omega.Data;
 theta(:,1) = logsout.get('y').Values.theta.Data;
 
 % Processing SLOW with AntiWindup
-sim('NREL5MW_FBNREL_SLOW1DOF_PitchController')
+sim('NREL5MW_FBNREL_SLOW1DOF_Antiwindup.slx')
     
 % collect simulation Data
 Omega(:,2) = logsout.get('y').Values.Omega.Data;

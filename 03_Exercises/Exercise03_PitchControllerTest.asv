@@ -5,6 +5,13 @@
 clearvars;close all;clc;
 addpath(genpath('../Library/'))
 
+%% poles calculation
+D = .7;
+omeaga = .5;
+G_0 = 1;
+p = num = []
+
+
 %% PreProcessing SLOW for all simulations
 
 % Default Parameter Turbine and Controller

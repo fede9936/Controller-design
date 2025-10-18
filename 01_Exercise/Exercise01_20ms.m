@@ -26,7 +26,7 @@ TSR = Omega_g_rated*2*pi/60*Parameter.Turbine.R/v_0;
 Cp = M_g*r_GB/(rho*pi*R^2*v_0^3)*2*Omega_g_rated*2*pi/60;
 % beta = reverseinterp2(TSR,Cp,lambda,theta,c_P);
 beta20 = 17.475;
-theta                           = deg2rad(beta20);                           % constant pitch for 16 m/s TODO!!!
+theta                           = deg2rad(beta20);                                    % constant pitch for 16 m/s TODO!!!
 
 % Aerodynamics
 Parameter.AD                    = load('PowerAndThrustCoefficientsNREL5MW','c_P','c_T','lambda','theta'); % Actuator Disc Parameter Region 2
